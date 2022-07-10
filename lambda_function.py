@@ -22,12 +22,3 @@ def defini_perguntas(omni_dom:OmniDom):
 
 
 
-def lambda_handler(event:dict,context):
-    body = event['body']
-    omni_dom = OmniDom(body)
-    defini_perguntas(omni_dom)
-    return {
-        'statusCode':'ok',
-        'body':dumps(omni_dom.copile(),indent=4,ensure_ascii=False)
-    }
-
