@@ -15,3 +15,13 @@ class Pergunta:
             'value': self.value
         }
 
+class PerguntaBoleana(Pergunta):
+    def __init__(self, nome: str, request: str, value=None) -> None:
+        super().__init__(nome, bool, request, value)
+
+
+class PerguntaTexto(Pergunta):
+    def __init__(self, nome: str, request: str, value=None) -> None:
+        super().__init__(nome, str, request, value)
+
+
