@@ -1,4 +1,4 @@
-
+from OmniDom.perguntas import Pergunta
 class OmniDom:
     pass 
     def __init__(self,respostas:dict) -> None:
