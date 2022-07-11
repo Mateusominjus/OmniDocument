@@ -8,7 +8,6 @@ setup(
    packages=['OmniDocument'],
    url='https://github.com/Mateusominjus/OmniDocument.git',
    description='Biblioteca para lidar com formulários da omnijus',
-   long_description=open('README.txt').read(),
    install_requires=[
        "varname",
    ]
