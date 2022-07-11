@@ -37,10 +37,13 @@ class OmniDom:
     def lista_unica(self,texto_da_pergunta:str,opcoes:List[str]):
         nome = varname()      
         lista_unica = ListaUnica(nome,texto_da_pergunta,opcoes)
+        self._arvore.append(lista_unica)
+        return lista_unica
     
+    def sub_document(self,nome:str):
+        pass 
     
-
-    def _copile(self):
+    def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
 
 
