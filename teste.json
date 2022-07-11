@@ -29,6 +29,7 @@
     },
     {
         "nome": "sub",
+        "tipo": "document",
         "itens": [
             {
                 "nome": "teste",
@@ -38,6 +39,7 @@
             },
             {
                 "nome": "sub_sub",
+                "tipo": "document",
                 "itens": [
                     {
                         "nome": "r",

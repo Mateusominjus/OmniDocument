@@ -81,12 +81,11 @@ class OmniDocument:
         return sub_document
     
 
-    def print(self,text:str):
-        self._text+=text
-    
-    def _render_text(self):
-        pass 
-    
+    def print(self,*text:str):
+        for text in text:
+            self._text+=text
+
+
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
 

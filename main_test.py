@@ -1,5 +1,7 @@
 from json import dump
+from pydoc import doc
 import unittest
+from OmniDocument.tags import *
 from OmniDocument.omni_document import OmniDocument
 from testes.testes_perguntas import *
 
@@ -21,7 +23,7 @@ def defini_perguntas(document:OmniDocument):
     teste = sub.pergunta_boleana('eai parsa')
     sub_sub = sub.sub_document()
     r = sub_sub.pergunta_texto('eai')
-    
+    document.print('eai parsa','nada',b('aaaaa'),p('aaaaaaa'),br())
 
 respostas = {
     'danos_morais':True,
@@ -30,6 +32,7 @@ respostas = {
 x = OmniDocument(respostas)
 defini_perguntas(x)
 r = x._render()
+print(x._text)
 dump(r,open('teste.json','w'),indent=4,ensure_ascii=False)
 #if __name__ == '__main__':
 #    unittest.main()
