@@ -1,7 +1,8 @@
 from varname import varname
+from OmniDom.lista_unica import ListaUnica
 from OmniDom.perguntas import Pergunta, PerguntaBoleana
 
-from typing import Any
+from typing import Any, List
 
 class OmniDom:
   
@@ -17,29 +18,27 @@ class OmniDom:
         return value
 
 
-    def pergunta_boleana(self,request:str,default:Any=None)->Pergunta:        
+    def pergunta_boleana(self,texto_da_pergunta:str,default:Any=None)->Pergunta:        
         nome = varname()
         value = self._value_ou_default(nome,default)
-        pergunta = PerguntaBoleana(nome,request,value)
+        pergunta = PerguntaBoleana(nome,texto_da_pergunta,value)
         self._arvore.append(pergunta)
         return pergunta
     
 
-    def pergunta_texto(self,request:str,default:Any=None)->Pergunta:  
+    def pergunta_texto(self,texto_da_pergunta:str,default:Any=None)->Pergunta:  
         nome = varname()      
         value = self._value_ou_default(nome,default)
-        pergunta = PerguntaBoleana(nome,request,value)
+        pergunta = PerguntaBoleana(nome,texto_da_pergunta,value)
         self._arvore.append(pergunta)
         return pergunta
     
     
-    def lista_unica(self):
-        
-        pass 
-
-    def lista_multipla(self):
-        pass 
-        
+    def lista_unica(self,texto_da_pergunta:str,opcoes:List[str]):
+        nome = varname()      
+        lista_unica = ListaUnica(nome,texto_da_pergunta,opcoes)
+    
+    
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
 

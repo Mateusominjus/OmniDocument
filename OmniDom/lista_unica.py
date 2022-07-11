@@ -14,3 +14,4 @@ class ListaUnica:
             'texto_da_pergunta':self._texto_da_pergunta,
             'opcoes': self._opcoes
         }
+    
