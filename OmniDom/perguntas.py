@@ -12,7 +12,8 @@ class Pergunta:
   
     def __eq__(self, __o: object) -> bool:
         return self._value == __o
-        
+    
+
   
     def _render(self):
         return {
@@ -39,6 +40,12 @@ class PerguntaNumero(Pergunta):
     def __init__(self, nome: str, texto_da_pergunta: str, value=None) -> None:
         super().__init__(nome, float, texto_da_pergunta, value)
 
+    def __gt__(self, __o: object) -> bool:
+        return self._value > __o
+
+    def __gte__(self, __o: object) -> bool:
+        return self._value >= __o
+        
 
     
         

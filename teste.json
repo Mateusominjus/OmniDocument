@@ -1,0 +1,30 @@
+[
+    {
+        "nome": "danos_morais",
+        "tipo": "bool",
+        "texto_da_pergunta": "ha danos morais ?",
+        "value": true
+    },
+    {
+        "nome": "valor_dos_danos_morais",
+        "tipo": "float",
+        "texto_da_pergunta": "valor dos danos morais",
+        "value": 20000
+    },
+    {
+        "nome": "descricao",
+        "tipo": "str",
+        "texto_da_pergunta": "descreva o por que o valor está tão alto",
+        "value": null
+    },
+    {
+        "nome": "motivos",
+        "tipo": "lista_unica",
+        "texto_da_pergunta": "informe o motivo do dano moral",
+        "opcoes": [
+            "pq me tacaram no pau",
+            "pq eu bati no carro dele",
+            "sei lá porra"
+        ]
+    }
+]
