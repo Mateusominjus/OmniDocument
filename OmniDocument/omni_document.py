@@ -4,13 +4,15 @@ from OmniDocument.perguntas import Pergunta, PerguntaBoleana, PerguntaNumero, Pe
 
 from typing import Any, List
 
+from OmniDocument.tags import render_tag
+
 
 
 class OmniDocument:
   
     def __init__(self,respostas:dict) -> None:
         self._respostas = respostas
-        self._text = ''
+        self._texto = ''
         self._arvore = []
         
 
@@ -83,8 +85,10 @@ class OmniDocument:
 
     def print(self,*text:str):
         for text in text:
-            self._text+=text
+            self._texto+=text
 
+    def getar_texto(self):
+        return render_tag('html',self._texto)
 
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
