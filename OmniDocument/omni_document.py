@@ -23,7 +23,7 @@ class OmniDocument:
         return value
 
 
-    def pergunta_boleana(self,texto_da_pergunta:str,default:Any=None)->Pergunta:        
+    def pergunta_boleana(self,texto_da_pergunta:str,default:Any=None)->PerguntaBoleana:        
         try:
             nome = varname()
         except ImproperUseError:
@@ -34,7 +34,7 @@ class OmniDocument:
         return pergunta
     
 
-    def pergunta_texto(self,texto_da_pergunta:str,default:Any=None)->Pergunta:  
+    def pergunta_texto(self,texto_da_pergunta:str,default:Any=None)->PerguntaTexto:  
         try:
             nome = varname()
         except ImproperUseError:
@@ -45,7 +45,7 @@ class OmniDocument:
         return pergunta
 
 
-    def pergunta_numero(self,texto_da_pergunta:str,default:Any=None)->Pergunta:  
+    def pergunta_numero(self,texto_da_pergunta:str,default:Any=None)->PerguntaNumero:  
         try:
             nome = varname()
         except ImproperUseError:
@@ -58,7 +58,7 @@ class OmniDocument:
         return pergunta
     
     
-    def lista_unica(self,texto_da_pergunta:str,opcoes:List[str]):
+    def lista_unica(self,texto_da_pergunta:str,opcoes:List[str])->ListaUnica:
         try:
             nome = varname()
         except ImproperUseError:
@@ -87,10 +87,10 @@ class OmniDocument:
         for text in text:
             self._texto+=text
 
-    def getar_texto(self):
+    def getar_texto(self)->str:
         return render_tag('html',self._texto)
 
-    def _render(self):
+    def _render(self)->list:
         return list(map(lambda p: p._render(),self._arvore))
 
 
