@@ -7,6 +7,7 @@ class ListaUnica:
         self._texto_da_pergunta = texto_da_pergunta
         self._opcoes = opcoes
     
+    
     def _render(self):
         return {
             'nome':self._nome,

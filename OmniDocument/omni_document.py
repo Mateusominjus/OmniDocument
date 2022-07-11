@@ -10,8 +10,9 @@ class OmniDocument:
   
     def __init__(self,respostas:dict) -> None:
         self._respostas = respostas
+        self._text = ''
         self._arvore = []
-
+        
 
     def _value_ou_default(self,nome:str,default:Any):
         value = self._respostas.get(nome)
@@ -80,6 +81,12 @@ class OmniDocument:
         return sub_document
     
 
+    def print(self,text:str):
+        self._text+=text
+    
+    def _render_text(self):
+        pass 
+    
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
 

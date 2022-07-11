@@ -1,8 +1,8 @@
 
 
-from OmniDocument.omni_document import OmniDom
+from OmniDocument.omni_document import OmniDocument
 
-class SubDom(OmniDom):
+class SubDom(OmniDocument):
 
     def __init__(self, value: dict,nome:str) -> None:
         super().__init__(value)
@@ -11,5 +11,6 @@ class SubDom(OmniDom):
     def _render(self):
         return {
             'nome':self._nome,
+            'tipo':'document',
             'itens':super()._render()
         }
