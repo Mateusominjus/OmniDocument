@@ -11,7 +11,7 @@ class Pergunta:
         return {
             'nome':self._nome,
             'tipo':self._tipo,
-            'pergunta':self._texto_da_pergunta,
+            'texto_da_pergunta':self._texto_da_pergunta,
             'value': self.value
         }
 
