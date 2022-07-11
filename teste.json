@@ -35,6 +35,17 @@
                 "tipo": "bool",
                 "texto_da_pergunta": "eai parsa",
                 "value": null
+            },
+            {
+                "nome": "sub_sub",
+                "itens": [
+                    {
+                        "nome": "r",
+                        "tipo": "str",
+                        "texto_da_pergunta": "eai",
+                        "value": null
+                    }
+                ]
             }
         ]
     }

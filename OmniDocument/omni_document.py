@@ -1,12 +1,12 @@
 from varname import varname,ImproperUseError
-from OmniDom.listaunica import ListaUnica
-from OmniDom.perguntas import Pergunta, PerguntaBoleana, PerguntaNumero, PerguntaTexto
+from OmniDocument.lista_unica import ListaUnica
+from OmniDocument.perguntas import Pergunta, PerguntaBoleana, PerguntaNumero, PerguntaTexto
 
 from typing import Any, List
 
 
 
-class OmniDom:
+class OmniDocument:
   
     def __init__(self,respostas:dict) -> None:
         self._respostas = respostas
@@ -73,7 +73,7 @@ class OmniDom:
             raise Exception('sempre deve haver uma variável antes do elemento')
 
         value = self._value_ou_default(nome,{})
-        from OmniDom.subdom import SubDom
+        from OmniDocument.sub_document import SubDom
         
         sub_document = SubDom(value,nome)
         self._arvore.append(sub_document)
