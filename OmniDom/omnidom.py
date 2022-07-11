@@ -39,7 +39,8 @@ class OmniDom:
         lista_unica = ListaUnica(nome,texto_da_pergunta,opcoes)
     
     
-    def _render(self):
+
+    def _copile(self):
         return list(map(lambda p: p._render(),self._arvore))
 
 
