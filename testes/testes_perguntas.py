@@ -1,6 +1,6 @@
 import unittest
 
-from OmniDom.perguntas import Pergunta, PerguntaBoleana
+from OmniDocument.perguntas import Pergunta, PerguntaBoleana
 
 
 class TestPerguntas(unittest.TestCase):

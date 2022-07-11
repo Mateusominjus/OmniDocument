@@ -1,6 +1,6 @@
 from json import dump
 import unittest
-from OmniDom.omnidom import OmniDom
+from OmniDocument.omni_document import OmniDom
 from testes.testes_perguntas import *
 
 
@@ -19,7 +19,8 @@ def defini_perguntas(document:OmniDom):
         )
     sub = document.sub_document()
     teste = sub.pergunta_boleana('eai parsa')
-
+    sub_sub = sub.sub_document()
+    r = sub_sub.pergunta_texto('eai')
 
 
 respostas = {
