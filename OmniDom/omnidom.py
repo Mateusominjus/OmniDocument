@@ -1,6 +1,6 @@
 from varname import varname
 from OmniDom.lista_unica import ListaUnica
-from OmniDom.perguntas import Pergunta, PerguntaBoleana
+from OmniDom.perguntas import Pergunta, PerguntaBoleana, PerguntaNumero, PerguntaTexto
 
 from typing import Any, List
 
@@ -29,7 +29,15 @@ class OmniDom:
     def pergunta_texto(self,texto_da_pergunta:str,default:Any=None)->Pergunta:  
         nome = varname()      
         value = self._value_ou_default(nome,default)
-        pergunta = PerguntaBoleana(nome,texto_da_pergunta,value)
+        pergunta = PerguntaTexto(nome,texto_da_pergunta,value)
+        self._arvore.append(pergunta)
+        return pergunta
+
+
+    def pergunta_numero(self,texto_da_pergunta:str,default:Any=None)->Pergunta:  
+        nome = varname()      
+        value = self._value_ou_default(nome,default)
+        pergunta = PerguntaNumero(nome,texto_da_pergunta,value)
         self._arvore.append(pergunta)
         return pergunta
     
@@ -42,7 +50,7 @@ class OmniDom:
     
     def sub_document(self,nome:str):
         pass 
-    
+
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))
 
