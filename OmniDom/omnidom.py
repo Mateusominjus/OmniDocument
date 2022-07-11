@@ -4,6 +4,8 @@ from OmniDom.perguntas import Pergunta, PerguntaBoleana, PerguntaNumero, Pergunt
 
 from typing import Any, List
 
+
+
 class OmniDom:
   
     def __init__(self,respostas:dict) -> None:
@@ -63,11 +65,20 @@ class OmniDom:
         self._arvore.append(lista_unica)
         return lista_unica
     
-    def sub_document(self,nome:str):
+    
+    def sub_document(self):
         try:
             nome = varname()
         except ImproperUseError:
             raise Exception('sempre deve haver uma variável antes do elemento')
+
+        value = self._value_ou_default(nome,{})
+        from OmniDom.subdom import SubDom
+        
+        sub_document = SubDom(value,nome)
+        self._arvore.append(sub_document)
+        return sub_document
+    
 
     def _render(self):
         return list(map(lambda p: p._render(),self._arvore))

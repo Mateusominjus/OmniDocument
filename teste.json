@@ -26,5 +26,16 @@
             "pq eu bati no carro dele",
             "sei lá porra"
         ]
+    },
+    {
+        "nome": "sub",
+        "itens": [
+            {
+                "nome": "teste",
+                "tipo": "bool",
+                "texto_da_pergunta": "eai parsa",
+                "value": null
+            }
+        ]
     }
 ]

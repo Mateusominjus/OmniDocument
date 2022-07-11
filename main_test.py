@@ -17,6 +17,8 @@ def defini_perguntas(document:OmniDom):
         motivos = document.lista_unica('informe o motivo do dano moral',
             opcoes=['pq me tacaram no pau','pq eu bati no carro dele','sei lá porra']
         )
+    sub = document.sub_document()
+    teste = sub.pergunta_boleana('eai parsa')
 
 
 
